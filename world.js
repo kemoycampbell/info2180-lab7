@@ -10,6 +10,7 @@ window.addEventListener("load", function() {
     // DOM
     var countryField = doc.getElementById("country");
     var lookupBtn = doc.getElementById("lookup");
+    var checkbox = doc.getElementById("checkbox");
     var result = doc.getElementById("result");
     
     lookupBtn.addEventListener("click", function() {
@@ -18,11 +19,10 @@ window.addEventListener("load", function() {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 result.innerHTML = this.responseText;
-                alert(this.responseText.substring(8, this.responseText.length - 10));
             }
         };
     
-        xhttp.open("GET", "https://info2180-lab7-macsual.c9users.io/world.php?country=" + country, true);
+        xhttp.open("GET", "https://info2180-lab7-macsual.c9users.io/world.php?country=" + country + "&all=" + checkbox.checked, true);
         xhttp.send();
     }, false);
     
