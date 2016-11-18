@@ -35,9 +35,10 @@ if ($country_set && $all_set) {
         
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-        echo '<ul>';
+        echo '<ul class="mdl-list">';
         foreach ($results as $row) {
-            echo '<li>' . $row['name'] . ' is ruled by ' . $row['head_of_state'] . '</li>';
+            echo '<li class="mdl-list__item"><span class="mdl-list__item-primary-content"><img src="gif/' . strtolower($row["code"]) . '.gif" style="padding: 10px;">'
+                    . $row['name'] . ' is ruled by ' . $row['head_of_state'] . '</span></li><hr>';
         }
         echo '</ul>';
         
@@ -51,9 +52,10 @@ if ($country_set && $all_set) {
         
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-        echo '<ul>';
+        echo '<ul class="mdl-list">';
         foreach ($results as $row) {
-            echo '<li>' . $row['name'] . ' is ruled by ' . $row['head_of_state'] . '</li>';
+            echo '<li class="mdl-list__item"><span class="mdl-list__item-primary-content"><img src="gif/' . strtolower($row["code"]) . '.gif" style="padding: 10px;">'
+                    . $row['name'] . ' is ruled by ' . $row['head_of_state'] . '</span></li><hr>';
         }
         echo '</ul>';
         
@@ -78,9 +80,10 @@ if ($country_set && !$all_set) {
     
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    echo '<ul>';
+    echo '<ul class="mdl-list">';
     foreach ($results as $row) {
-        echo '<li>' . $row['name'] . ' is ruled by ' . $row['head_of_state'] . '</li>';
+        echo '<li class="mdl-list__item"><span class="mdl-list__item-primary-content"><img src="gif/' . strtolower($row["code"]) . '.gif" style="padding: 10px;">'
+                . $row['name'] . ' is ruled by ' . $row['head_of_state'] . '</span></li><hr>';
     }
     echo '</ul>';
     
@@ -95,7 +98,7 @@ if ($all_set && !$country_set) {
         print "\n";
         print "<p>No query provided</p>";
         
-        exit();   
+        exit();
     }
     
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -104,9 +107,10 @@ if ($all_set && !$country_set) {
     
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
-    echo '<ul>';
+    echo '<ul class="mdl-list">';
     foreach ($results as $row) {
-        echo '<li>' . $row['name'] . ' is ruled by ' . $row['head_of_state'] . '</li>';
+        echo '<li class="mdl-list__item"><span class="mdl-list__item-primary-content"><img src="gif/' . strtolower($row["code"]) . '.gif" style="padding: 10px;">'
+                . $row['name'] . ' is ruled by ' . $row['head_of_state'] . '</span></li><hr>';
     }
     echo '</ul>';
     
